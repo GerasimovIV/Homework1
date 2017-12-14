@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-char* f(a)
+char* f(int a)
 {
     int i;
     if ( a == 1 )
@@ -13,17 +13,18 @@ char* f(a)
     }
     for (i = 2; i <= a/2; i+=1 )
     {
-        if ((a/i)*i == a)
+
+        if ( a % i == 0)
         {
             return "Непростое";
         }
-    return "Простое";
     }
+    return "Простое";
 }
 int main()
 {
     int a;
     scanf("%d", &a);
-    printf("%s", f(a));
+    printf("%s\n", f(a));
     return 0;
 }
